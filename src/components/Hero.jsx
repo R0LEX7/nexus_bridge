@@ -1,6 +1,15 @@
 import { FaAnglesDown } from "react-icons/fa6";
+import { motion } from "framer-motion"
 
 
+const variant = {
+initial :{y: -150 ,  opacity : 0},
+animate : {y : 0 ,opacity : 1 , transition : {
+  type:"spring",
+  duration: 1.3,
+      staggerChildren: 0.1,
+}}
+}
 
 const Hero = () => {
   return (
@@ -9,7 +18,10 @@ const Hero = () => {
       className="bg-cover w-full h-screen bg-no-repeat  bg-[url('https://iuk.ktn-uk.org/wp-content/uploads/2021/01/AdobeStock_375393450-scaled-e1611136805546.jpeg')] bg-gray-700 bg-blend-multiply"
     >
       <div className="px-4 mx-auto h-full max-w-screen-xl text-center mt-18 lg:py-56  pt-12">
-        <div className="mt-64 lg:mt-52 md:mt-52">
+        <motion.div className="mt-64 lg:mt-52 md:mt-52"
+        variants={variant}
+        initial="initial"
+        animate="animate">
           <h1 className="mb-4 mt-18 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
             We invest in the world’s potential
           </h1>
@@ -43,7 +55,7 @@ const Hero = () => {
           </div>
           <button  onClick={(() => {window.scroll(0,700)})}
             className="inline-flex mt-6 animate-bounce justify-center  items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-full w-14 h-14 border  hover:border-none  border-white hover:bg-sky-700 "><FaAnglesDown/></button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

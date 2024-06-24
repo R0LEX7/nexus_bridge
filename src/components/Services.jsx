@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion"
+
 
 const items = [
   {
@@ -27,12 +29,34 @@ const items = [
   },
 ];
 
+const variants = {
+    right : {
+        initial : {x:500 , opacity : 0.6},
+        animate : {x : 0 , opacity : 1 , transition : {
+            type:"spring",
+            duration: 1.7,
+                staggerChildren: 0.1,
+          }}
+    },
+    left : {
+        initial : {x:-500 , opacity : 0.6},
+        animate : {x : 0 , opacity : 1 , transition : {
+            type:"spring",
+            duration: 1.7,
+                staggerChildren: 0.1,
+          }}
+    }
+}
+
 const Service = () => {
   return (
     <section id="service" className="relative px-2 overflow-hidden bg-gradient-to-r from-sky-800 to-cyan-400 pt-16 pb-32 space-y-24">
     <div className="relative">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
-            <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
+            <motion.div
+            initial={variants.left.initial}
+            whileInView={variants.left.animate}
+            className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
 
                 <div>
                     <div>
@@ -63,14 +87,17 @@ const Service = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="mt-12 sm:mt-16 lg:mt-0">
+            </motion.div>
+            <motion.div
+            initial={variants.right.initial}
+            whileInView={variants.right.animate}
+            className="mt-12 sm:mt-16 lg:mt-0">
                 <div className="-mr-48 pl-6 md:-mr-16 lg:relative w-full contents  lg:block lg:m-0 lg:h-full lg:px-0">
                     <img loading="lazy" width="647" height="486"
                         className=" w-[560px] rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full"
                         style={{color:"transparent"}} src="https://images.unsplash.com/photo-1569144157591-c60f3f82f137"/>
                 </div>
-            </div>
+            </motion.div>
         </div>
     </div>
 
@@ -78,7 +105,8 @@ const Service = () => {
 
     <div className="relative">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
-            <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 lg:col-start-2">
+            <motion.div initial={variants.right.initial}
+            whileInView={variants.right.animate} className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 lg:col-start-2">
                 <div>
                     <div>
                         <span className="flex h-12 w-12 items-center justify-center rounded-xl border-[#E7E7E8] border-2 ">
@@ -107,14 +135,15 @@ const Service = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="mt-12 sm:mt-16 lg:mt-0">
+            </motion.div>
+            <motion.div  initial={variants.left.initial}
+            whileInView={variants.left.animate}  className="mt-12 sm:mt-16 lg:mt-0">
                 <div className="-ml-48 pr-6 md:-ml-16  contents  lg:block lg:relative lg:m-0 lg:h-full lg:px-0">
                     <img alt="Inbox user interface" loading="lazy" width="647" height="486"
                         className=" rounded-xl w-[560px] shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 "
                         style={{color:"transparent"}} src="https://images.unsplash.com/photo-1599134842279-fe807d23316e"/>
                 </div>
-            </div>
+            </motion.div>
         </div>
     </div>
 
@@ -122,7 +151,8 @@ const Service = () => {
 
     <div className="relative">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
-            <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
+            <motion.div  initial={variants.left.initial}
+            whileInView={variants.left.animate} className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
                 <div>
                     <div>
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl border-[#E7E7E8] border-2 ">
@@ -151,15 +181,18 @@ const Service = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="mt-12 sm:mt-16 lg:mt-0">
+            </motion.div>
+            <motion.div
+             initial={variants.right.initial}
+             whileInView={variants.right.animate}
+            className="mt-12 sm:mt-16 lg:mt-0">
                 <div className="-mr-48 pl-6 md:-mr-16 lg:relative contents lg:block lg:m-0 lg:h-full lg:px-0">
                     <img loading="lazy" width="646" height="485"
                         className="md:w-[560px] rounded-xl shadow-2xl ring-1  ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                         style={{color:"transparent"}}
                         src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e"/>
                 </div>
-            </div>
+            </motion.div>
         </div>
     </div>
 </section>
