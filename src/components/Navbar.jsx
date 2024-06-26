@@ -92,11 +92,16 @@ const Navbar = () => {
             } w-full md:flex md:w-auto md:order-1`}
             id="navbar-sticky"
           >
-            <ul className={`flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ${open ? "bg-sky-800" : ""}`}>
+            <ul
+              className={`flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ${
+                open ? "bg-sky-800" : ""
+              }`}
+            >
               {navItems.map((item, ind) => (
                 <li
                   key={ind}
                   className="hover:border-b-2 border-cyan-500 px-2"
+                  onClick={() => setOpen((prev) => !prev)}
                 >
                   <a
                     href={item.path}
