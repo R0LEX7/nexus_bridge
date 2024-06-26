@@ -31,7 +31,7 @@ const items = [
 
 const variants = {
     right : {
-        initial : {x:500 , opacity : 0.6},
+        initial : {x:100 , opacity : 0.6},
         animate : {x : 0 , opacity : 1 , transition : {
             type:"spring",
             duration: 1.7,
@@ -39,7 +39,7 @@ const variants = {
           }}
     },
     left : {
-        initial : {x:-500 , opacity : 0.6},
+        initial : {x:-100 , opacity : 0.6},
         animate : {x : 0 , opacity : 1 , transition : {
             type:"spring",
             duration: 1.7,
@@ -54,8 +54,8 @@ const Service = () => {
     <div className="relative">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 ">
             <motion.div
-            initial={variants.left.initial}
-            whileInView={variants.left.animate}
+            // initial={variants.left.initial}
+            // whileInView={variants.left.animate}
             className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
 
                 <div>

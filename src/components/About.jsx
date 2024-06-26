@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const variants = {
   right: {
-    initial: { x: 800, opacity: 0 },
+    initial: { x: 100, opacity: 0 },
     animate: {
       x: 0,
       opacity: 1,
@@ -15,7 +15,7 @@ const variants = {
     },
   },
   up: {
-    initial: { y: -500, opacity: 0 },
+    initial: { y: -100, opacity: 0 },
     animate: {
       y: 0,
       opacity: 1,
@@ -28,7 +28,7 @@ const variants = {
     },
   },
   left: {
-    initial: { x: -300, opacity: 0 },
+    initial: { x: -100, opacity: 0 },
     animate: {
       x: 0,
       opacity: 1,
